@@ -8,12 +8,12 @@ const Seconds = () => {
           setSeconds(seconds => seconds + 1);
       }, 1000);
 
-      clearInterval(intervalId);
+      return () => { 
+        clearInterval(intervalId);
+      }
   }, [seconds]);
 
-  return {
-    seconds
-  }
+  return seconds;
 }
 
 export default Seconds;
